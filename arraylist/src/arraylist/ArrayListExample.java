@@ -75,6 +75,24 @@ public class ArrayListExample {
 
 		System.out.println("The final contents " + "of the arraylist are: " + list);
 
+		// Removing an element in a loop
+		list.add(1, "ToBeRemoved");
+		System.out.println("The arraylist is: " + list);
+		// use this way --> raise java.util.ConcurrentModificationException
+		// for (String str : list) {
+		// if (str.startsWith("ToBe")) {
+		// list.remove(str);
+		// }
+		// }
+		// you shoule use an Iterator
+		for (Iterator<String> it = list.iterator(); it.hasNext();) {
+			String str = it.next();
+			if (str.startsWith("ToBe")) {
+				it.remove();
+			}
+		}
+		System.out.println("The arraylist is: " + list);
+
 		// Converting ArrayList to Array
 		String[] simpleArray = list.toArray(new String[list.size()]);
 		System.out.println(
