@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata>
+	<states>
+		<state label="1" initial="true" final="true"/>
+		<state label="2" final="true"/>
+		<state label="3"/>
+	</states>
+	<inputs>
+		<input label="a"/>
+		<state label="b"/>
+	</inputs>
+	<transitions>
+		<transition source="1" target="1" label="a"/>
+		<transition source="1" target="2" label="b"/>
+		<transition source="2" target="3" label="a"/>
+		<transition source="3" target="2" label="a"/>
+		<transition source="3" target="1" label="b"/>
+	</transitions>
+</automata>
